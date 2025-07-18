@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Clock, Star, CheckCircle } from 'lucide-react';
 import ParallaxSection from '../components/ParallaxSection';

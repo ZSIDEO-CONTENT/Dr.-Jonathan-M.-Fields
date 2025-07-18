@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon, Stethoscope } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -56,7 +56,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-primary-500 ${
+                className={`text-sm font-medium text-black transition-colors duration-200 hover:text-primary-500 ${
                   location.pathname === item.href
                     ? 'text-primary-500'
                     : 'text-gray-700 dark:text-gray-300'

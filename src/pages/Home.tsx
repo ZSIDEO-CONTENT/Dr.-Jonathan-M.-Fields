@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Play, ArrowRight, Star, CheckCircle, Calendar, FileText, Users } from 'lucide-react';
+import { Play, ArrowRight, Star, CheckCircle, Calendar, FileText, } from 'lucide-react';
 import ParallaxSection from '../components/ParallaxSection';
 
 export default function Home() {
@@ -79,50 +79,54 @@ export default function Home() {
       transition={{ duration: 0.5 }}
     >
       {/* Hero Section */}
-    <ParallaxSection className="relative min-h-screen flex items-center justify-center  dark:bg-navy-900">
-  <div className="absolute " />
+<ParallaxSection
+  className="flex items-center justify-center text-white"
+  backgroundImage="/public/images/clinicbg.jpg"
+>
 
-  <div className="relative z-10 text-center text-[#2a2a2a] px-4 sm:px-6 lg:px-8">
 
-          <motion.h1
-            className="text-5xl md:text-7xl dark:text-white font-heading font-bold mb-6"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            Functional Medicine
-            <br />
-            <span className="text-primary-400">Meets Ancient Wisdom</span>
-          </motion.h1>
-          
-          <motion.p
-            className="text-xl md:text-2xl dark:text-white mb-8 max-w-2xl mx-auto"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            Helping You Heal From The Inside Out
-          </motion.p>
-          
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <Link
-              to="/contact"
-              className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105"
-            >
-              Book a Free Consult
-            </Link>
-            <button className="bg-[#7d293b] hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center space-x-2 hover:scale-105">
-              <Play className="h-5 w-5" />
-              <span>Watch Video</span>
-            </button>
-          </motion.div>
-        </div>
-      </ParallaxSection>
+  {/* Content */}
+  <div className="relative z-10 text-center text-black px-4 sm:px-6 lg:px-8">
+    <motion.h1
+      className="text-5xl md:text-7xl dark:text-white font-heading font-bold mb-6"
+      initial={{ y: 30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.8 }}
+    >
+      Functional Medicine
+      <br />
+      <span className="text-primary-400">Meets Ancient Wisdom</span>
+    </motion.h1>
+
+    <motion.p
+      className="text-xl md:text-2xl dark:text-white mb-8 max-w-2xl mx-auto"
+      initial={{ y: 30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.4, duration: 0.8 }}
+    >
+      Helping You Heal From The Inside Out
+    </motion.p>
+
+    <motion.div
+      className="flex flex-col sm:flex-row gap-4 justify-center"
+      initial={{ y: 30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.6, duration: 0.8 }}
+    >
+      <Link
+        to="/contact"
+        className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105"
+      >
+        Book a Free Consult
+      </Link>
+      <button className="bg-[#7d293b] hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center space-x-2 hover:scale-105">
+        <Play className="h-5 w-5" />
+        <span>Watch Video</span>
+      </button>
+    </motion.div>
+  </div>
+</ParallaxSection>
+
 
       {/* About Strip */}
       <section className="py-16 bg-gray-50 dark:bg-navy-800">
@@ -130,7 +134,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="/public/images/dr.png"
                 alt="Dr. Jonathan M. Fields"
                 className="rounded-2xl shadow-lg"
               />

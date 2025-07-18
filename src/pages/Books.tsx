@@ -151,7 +151,7 @@ export default function Books() {
             
             <div>
               <img
-                src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="/public/images/book.jpg"
                 alt="Book Pages"
                 className="rounded-2xl shadow-lg"
               />

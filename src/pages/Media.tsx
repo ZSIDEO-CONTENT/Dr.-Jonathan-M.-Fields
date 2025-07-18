@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Calendar, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
 import ParallaxSection from '../components/ParallaxSection';
