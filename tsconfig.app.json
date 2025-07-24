@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* ✅ Add these two 👇 */
+    
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
