@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import book from '@/assets/book.jpg'
+
 import { Download, Star, ChevronDown, ChevronUp } from 'lucide-react';
 import ParallaxSection from '../components/ParallaxSection';
 
@@ -175,7 +175,7 @@ export default function Books() {
             
             <div>
               <img
-                src={book}
+                src='/images/book.jpg'
                 alt="Book Pages"
                 className="rounded-2xl shadow-lg"
               />
