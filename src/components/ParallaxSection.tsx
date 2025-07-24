@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 interface ParallaxSectionProps {
-  children: React.ReactNode;
-  className?: string;
-  backgroundImage?: string; // Add this
-  speed?: number;
+  children: React.ReactNode
+  className?: string
+  backgroundImage?: string
+  speed?: number
 }
 
 export default function ParallaxSection({
@@ -14,32 +14,35 @@ export default function ParallaxSection({
   backgroundImage,
   speed = 0.5,
 }: ParallaxSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
-  });
+  })
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', `${speed * 100}%`]);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', `${speed * 100}%`])
 
   return (
-    <div ref={ref} className={`relative overflow-hidden h-screen ${className}`}>
-      {/* Background image layer */}
+    <section ref={ref} className={`relative w-full h-screen overflow-hidden ${className}`}>
+      {/* Background image with parallax scroll */}
       {backgroundImage && (
-        <div className="absolute inset-0 z-0">
+        <motion.div
+          style={{ y }}
+          className="absolute inset-0 -z-10 will-change-transform"
+        >
           <img
             src={backgroundImage}
             alt="Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-        </div>
+          <div className="absolute inset-0 bg-black/60" />
+        </motion.div>
       )}
 
-      {/* Scroll-transform content */}
-      <motion.div style={{ y }} className="relative z-10 will-change-transform">
+      {/* Foreground content */}
+      <div className="relative z-10 flex items-center justify-center w-full h-full">
         {children}
-      </motion.div>
-    </div>
-  );
+      </div>
+    </section>
+  )
 }

@@ -64,8 +64,16 @@ export default function Books() {
       {/* Hero Section */}
     <ParallaxSection className="relative h-screen flex items-center justify-center">
   <div className="absolute" />
+   <div className="absolute inset-0 -z-10">
+    <img
+      src="/images/clinicbg.jpg"
+      alt="Clinic background"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black/70" />
+  </div>
 
-  <div className="relative z-10 text-center text-gray-900 dark:text-white px-4 sm:px-6 lg:px-8">
+  <div className="relative z-10 text-center text-white dark:text-white px-4 sm:px-6 lg:px-8">
     <motion.div
       className="mb-8"
       initial={{ y: 30, opacity: 0 }}
@@ -75,23 +83,38 @@ export default function Books() {
       
     </motion.div>
 
-    <motion.h1
-      className="text-4xl md:text-6xl font-heading dark:text-white font-bold mb-6 text-gray-900"
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.4, duration: 0.8 }}
-    >
-      Healing From Within
-    </motion.h1>
+    <div className="relative z-10 text-center max-w-4xl mx-auto mb-16 px-4">
+  {/* Title */}
+  <motion.h1
+    className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold tracking-tight text-white drop-shadow-[0_3px_6px_rgba(0,0,0,0.5)]"
+    initial={{ y: 60, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ delay: 0.3, duration: 1, ease: 'easeOut' }}
+  >
+    Healing From <span className="text-primary-400">Within</span>
+  </motion.h1>
 
-    <motion.p
-      className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-600"
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.6, duration: 0.8 }}
-    >
-      "The only way to heal is to understand the root cause of illness and address it with both modern science and ancient wisdom."
-    </motion.p>
+  {/* Divider Line */}
+  <motion.div
+    className="h-[3px] w-[100px] mx-auto mt-4 bg-white/20 rounded-full blur-sm"
+    initial={{ scaleX: 0 }}
+    animate={{ scaleX: 1 }}
+    transition={{ delay: 0.6, duration: 0.6, ease: 'easeOut' }}
+    style={{ transformOrigin: 'center' }}
+  />
+
+  {/* Quote */}
+  <motion.p
+    className="text-lg md:text-2xl mt-8 font-light text-white/80 italic leading-relaxed"
+    initial={{ y: 40, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ delay: 0.8, duration: 1, ease: 'easeOut' }}
+  >
+    “The only way to heal is to understand the root cause of illness<br className="hidden md:inline" />
+    and address it with both modern science and ancient wisdom.”
+  </motion.p>
+</div>
+
 
     <motion.div
       className="flex flex-col sm:flex-row gap-4 justify-center"

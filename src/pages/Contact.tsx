@@ -34,18 +34,45 @@ export default function Contact() {
     >
       {/* Hero Section */}
      <ParallaxSection className="relative h-screen flex items-center justify-center ">
-  <div className="absolute " />
+   <div className="absolute inset-0 -z-10">
+    <img
+      src="/images/clinicbg.jpg"
+      alt="Clinic background"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black/70" />
+  </div>
 
-  <div className="relative z-10 text-center text-gray-900 px-4 sm:px-6 lg:px-8">
+  <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
 
-          <motion.h1
-            className="text-5xl md:text-7xl font-heading dark:text-white font-bold mb-6"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            Get in Touch
-          </motion.h1>
+          <div className="relative z-10 text-center mb-16 px-4">
+  {/* Reveal Wrapper */}
+  <motion.div
+    className="overflow-hidden"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.1 }}
+  >
+    <motion.h1
+      className="text-[clamp(2.8rem,6vw,4.75rem)] font-extrabold tracking-tight text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]"
+      initial={{ y: 80 }}
+      animate={{ y: 0 }}
+      transition={{ delay: 0.2, duration: 1, ease: 'easeOut' }}
+    >
+      Get <span className="text-primary-400">in Touch</span>
+    </motion.h1>
+  </motion.div>
+
+  {/* Underline Glow */}
+  <motion.div
+    className="h-[3px] w-[120px] mt-4 mx-auto bg-white/20 rounded-full blur-sm"
+    initial={{ scaleX: 0 }}
+    animate={{ scaleX: 1 }}
+    transition={{ delay: 0.6, duration: 0.5, ease: 'easeOut' }}
+    style={{ transformOrigin: 'center' }}
+  />
+</div>
+
           
           <motion.p
             className="text-xl md:text-2xl mb-8 dark:text-white max-w-2xl mx-auto"

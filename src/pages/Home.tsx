@@ -80,27 +80,68 @@ export default function Home() {
       transition={{ duration: 0.5 }}
     >
       {/* Hero Section */}
-<ParallaxSection
-  className="flex items-center justify-center text-white"
-  backgroundImage="/images/clinicbg.jpg"
->
+<ParallaxSection className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden">
+  {/* Background image and overlay */}
+  <div className="absolute inset-0 -z-10">
+    <img
+      src="/images/clinicbg.jpg"
+      alt="Clinic background"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black/70" />
+  </div>
 
-
-  {/* Content */}
-  <div className="relative z-10 text-center text-black px-4 sm:px-6 lg:px-8">
+  {/* Foreground content */}
+  <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+    <div className="relative z-10 flex flex-col items-center justify-center text-center">
+  {/* Line 1: Reveal with mask */}
+  <motion.div
+    className="overflow-hidden"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.1 }}
+  >
     <motion.h1
-      className="text-5xl md:text-7xl dark:text-white font-heading font-bold mb-6"
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.8 }}
+      className="text-[clamp(3rem,8vw,6rem)] font-extrabold leading-[1.1] tracking-tight text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]"
+      initial={{ y: 100 }}
+      animate={{ y: 0 }}
+      transition={{ delay: 0.2, duration: 1, ease: 'easeOut' }}
     >
-      Functional Medicine
-      <br />
-      <span className="text-primary-400">Meets Ancient Wisdom</span>
+      Functional&nbsp;
+      <span className="text-primary-400">Medicine</span>
     </motion.h1>
+  </motion.div>
+
+  {/* Line 2: Delayed elegant reveal */}
+  <motion.div
+    className="overflow-hidden"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.4 }}
+  >
+    <motion.h2
+      className="text-[clamp(2rem,5vw,3rem)] font-light italic text-white/80 mt-4 tracking-wide"
+      initial={{ y: 80 }}
+      animate={{ y: 0 }}
+      transition={{ delay: 0.5, duration: 1, ease: 'easeOut' }}
+    >
+      meets <span className="not-italic text-primary-300 font-semibold">Ancient Wisdom</span>
+    </motion.h2>
+  </motion.div>
+
+  {/* Underline glow bar */}
+  <motion.div
+    className="h-[4px] w-[180px] mt-6 bg-white/20 rounded-full blur-sm"
+    initial={{ scaleX: 0 }}
+    animate={{ scaleX: 1 }}
+    transition={{ delay: 1, duration: 0.6, ease: 'easeOut' }}
+    style={{ transformOrigin: 'center' }}
+  />
+</div>
+
 
     <motion.p
-      className="text-xl md:text-2xl dark:text-white mb-8 max-w-2xl mx-auto"
+      className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto"
       initial={{ y: 30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.4, duration: 0.8 }}
@@ -114,12 +155,12 @@ export default function Home() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.6, duration: 0.8 }}
     >
-      <Link
-        to="/contact"
+      <a
+        href="/contact"
         className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105"
       >
         Book a Free Consult
-      </Link>
+      </a>
       <button className="bg-[#7d293b] hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all flex items-center justify-center space-x-2 hover:scale-105">
         <Play className="h-5 w-5" />
         <span>Watch Video</span>
@@ -129,13 +170,14 @@ export default function Home() {
 </ParallaxSection>
 
 
+
       {/* About Strip */}
       <section className="py-16 bg-gray-50 dark:bg-navy-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="/images/drJ.png"
+                src="/public/images/drJ.png"
                 alt="Dr. Jonathan M. Fields"
                 className="rounded-2xl shadow-lg"
               />
@@ -149,7 +191,7 @@ export default function Home() {
               </p>
               <Link
                 to="/about"
-                className="inline-flex items-center text-primary-500 hover:text-primary-600 font-semibold"
+                className="inline-flex items-center text-white hover:text-black font-semibold"
               >
                 Learn More About Dr. Fields
                 <ArrowRight className="ml-2 h-5 w-5" />

@@ -55,16 +55,42 @@ export default function About() {
       {/* Hero Section */}
 <ParallaxSection className="relative h-screen flex items-center justify-center  dark:bg-navy-900">
   <div className="absolute dark:bg-navy-900" />
+   <div className="absolute inset-0 -z-10">
+    <img
+      src="/images/clinicbg.jpg"
+      alt="Clinic background"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black/70" />
+  </div>
   
-  <div className="relative z-10 text-center text-gray-900 dark:text-white px-4 sm:px-6 lg:px-8">
+  <div className="relative z-10 text-center text-white dark:text-white px-4 sm:px-6 lg:px-8">
+    <div className="relative z-10 flex flex-col items-center justify-center text-center mb-12">
+  <motion.div
+    className="overflow-hidden"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.1 }}
+  >
     <motion.h1
-      className="text-5xl md:text-7xl font-heading font-bold mb-6"
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.8 }}
+      className="text-[clamp(2.8rem,6vw,4.5rem)] font-extrabold tracking-tight text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]"
+      initial={{ y: 80 }}
+      animate={{ y: 0 }}
+      transition={{ delay: 0.2, duration: 1, ease: 'easeOut' }}
     >
-      About Dr. Fields
+      About <span className="text-primary-400">Dr. Fields</span>
     </motion.h1>
+  </motion.div>
+
+  <motion.div
+    className="h-[3px] w-[120px] mt-4 bg-white/20 rounded-full blur-sm"
+    initial={{ scaleX: 0 }}
+    animate={{ scaleX: 1 }}
+    transition={{ delay: 0.9, duration: 0.6, ease: 'easeOut' }}
+    style={{ transformOrigin: 'center' }}
+  />
+</div>
+
 
     <motion.p
       className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto"
