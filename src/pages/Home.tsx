@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import drJ from '../assets/images/drJ.png';
-import clinicbg from '../assets/images/clinicbg.jpg'
+
 
 import { motion } from 'framer-motion';
 import { Play, ArrowRight, Star, CheckCircle, Calendar, FileText, } from 'lucide-react';
