@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import drj from '../assets/drj.png'
+import drj from '@/assets/drj.png';
 import { motion } from 'framer-motion';
 import { Play, ArrowRight, Star, CheckCircle, Calendar, FileText, } from 'lucide-react';
 import ParallaxSection from '../components/ParallaxSection';
