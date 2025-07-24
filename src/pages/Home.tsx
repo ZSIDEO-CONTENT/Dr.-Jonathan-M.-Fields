@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
 import { Play, ArrowRight, Star, CheckCircle, Calendar, FileText, } from 'lucide-react';
 import ParallaxSection from '../components/ParallaxSection';
@@ -81,7 +82,7 @@ export default function Home() {
       {/* Hero Section */}
 <ParallaxSection
   className="flex items-center justify-center text-white"
-  backgroundImage="/public/images/clinicbg.jpg"
+  backgroundImage="/images/clinicbg.jpg"
 >
 
 
@@ -134,7 +135,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="/public/images/dr.png"
+                src="/public/images/drJ.png"
                 alt="Dr. Jonathan M. Fields"
                 className="rounded-2xl shadow-lg"
               />
