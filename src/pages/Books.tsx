@@ -174,7 +174,7 @@ export default function Books() {
             
             <div>
               <img
-                src="/public/images/book.jpg"
+                src="/images/book.jpg"
                 alt="Book Pages"
                 className="rounded-2xl shadow-lg"
               />

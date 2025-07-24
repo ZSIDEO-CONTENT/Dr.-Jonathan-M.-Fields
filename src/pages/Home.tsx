@@ -177,7 +177,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img
-                src="/public/images/drJ.png"
+                src="/images/drJ.png"
                 alt="Dr. Jonathan M. Fields"
                 className="rounded-2xl shadow-lg"
               />
